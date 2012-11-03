@@ -1,4 +1,7 @@
 RestaurantReservations::Application.routes.draw do
+  devise_for :restaurants, controllers: { registrations: "restaurants/registrations" }
+
+  root to: "admin#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
