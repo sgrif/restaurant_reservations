@@ -1,7 +1,14 @@
 RestaurantReservations::Application.routes.draw do
+  resources :reservations, except: :show do
+    collection do
+      post :check_availability
+      post :find
+    end
+  end
+
   devise_for :restaurants, controllers: { registrations: "restaurants/registrations" }
 
-  root to: "admin#index"
+  root to: "reservations#new"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

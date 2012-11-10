@@ -1,0 +1,5 @@
+= simple_form_for @check_time_res, url: check_availability_reservations_path do |f|
+  = f.input :starts_at, label: "Select a date/time", ampm: true, minute_step: 15
+  - if @available_tables
+    #{@available_tables} tables are available for #{@check_time_res.starts_at}
+  = f.submit "Check Availability"

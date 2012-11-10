@@ -11,7 +11,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121103221706) do
+ActiveRecord::Schema.define(:version => 20121110014005) do
+
+  create_table "reservations", :id => false, :force => true do |t|
+    t.datetime "starts_at"
+    t.string   "name"
+    t.integer  "restaurant_id"
+    t.string   "confirmation_token"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.string   "phone_number"
+    t.integer  "diner_count"
+    t.string   "email"
+  end
+
+  add_index "reservations", ["confirmation_token"], :name => "index_reservations_on_confirmation_token", :unique => true
+  add_index "reservations", ["restaurant_id", "starts_at"], :name => "index_reservations_on_restaurant_id_and_starts_at"
 
   create_table "restaurants", :force => true do |t|
     t.string   "name"
