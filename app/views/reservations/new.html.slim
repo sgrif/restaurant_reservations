@@ -1,0 +1,12 @@
+h1= @restaurant.name
+
+fieldset
+  legend
+   h2 Check availability
+  == render 'availability_form'
+
+h2 Make a Reservation
+== render 'form'
+
+h2 Update a Reservation
+== render 'find_form'

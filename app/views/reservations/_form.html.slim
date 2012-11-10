@@ -1,0 +1,12 @@
+= simple_form_for(@reservation) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :starts_at, ampm: true, minute_step: 15
+    = f.input :diner_count, label: "Number of Diners"
+    = f.input :name
+    = f.input :email, as: :email
+    = f.input :phone_number
+
+  .form-actions
+    = f.button :submit

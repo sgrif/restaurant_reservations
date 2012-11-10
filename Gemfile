@@ -21,6 +21,12 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem "slim",               "~> 1.3.3"
+gem "slim-rails"
+gem "simple_form",        "~> 2.0.4"
+gem "devise",             "~> 2.1.2"
+gem "factory_girl_rails", "~> 4.1.0"
+gem "whenever"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
